@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ran - Backend Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      @keyframes zoomIn {
+        from {
+          opacity: 0;
+          transform: scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      .animate-fade-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+      }
+      .animate-fade-left {
+        animation: fadeInLeft 0.8s ease-out forwards;
+      }
+      .animate-fade-right {
+        animation: fadeInRight 0.8s ease-out forwards;
+      }
+      .animate-zoom-in {
+        animation: zoomIn 0.6s ease-out forwards;
+      }
+      .hero-gradient {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+      }
+      .glow {
+        box-shadow: 0 0 60px rgba(59, 130, 246, 0.3);
+      }
+      .nav-scrolled {
+        background: rgba(15, 23, 42, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .hidden-element {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-900 text-gray-100 font-sans">
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <div class="text-2xl font-bold text-blue-400">Ran</div>
+          <ul class="hidden md:flex space-x-8">
+            <li><a href="#home" class="nav-link text-gray-300 hover:text-blue-400 transition-colors duration-300">Home</a></li>
+            <li><a href="#about" class="nav-link text-gray-300 hover:text-blue-400 transition-colors duration-300">About</a></li>
+            <li><a href="#projects" class="nav-link text-gray-300 hover:text-blue-400 transition-colors duration-300">Projects</a></li>
+            <li><a href="#contact" class="nav-link text-gray-300 hover:text-blue-400 transition-colors duration-300">Contact</a></li>
+          </ul>
+          <button id="mobileMenuBtn" class="md:hidden text-gray-300">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+        <ul id="mobileMenu" class="md:hidden mt-4 space-y-4 hidden">
+          <li><a href="#home" class="nav-link block text-gray-300 hover:text-blue-400 transition-colors duration-300">Home</a></li>
+          <li><a href="#about" class="nav-link block text-gray-300 hover:text-blue-400 transition-colors duration-300">About</a></li>
+          <li><a href="#projects" class="nav-link block text-gray-300 hover:text-blue-400 transition-colors duration-300">Projects</a></li>
+          <li><a href="#contact" class="nav-link block text-gray-300 hover:text-blue-400 transition-colors duration-300">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center hero-gradient relative overflow-hidden">
+      <div class="absolute inset-0 glow opacity-20"></div>
+      <div class="container mx-auto px-6 text-center relative z-10">
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-up">Hi, I'm <span class="text-blue-400">Ran</span></h1>
+        <h2 class="text-3xl md:text-4xl font-semibold mb-4 animate-fade-up" style="animation-delay: 0.2s; opacity: 0">Backend Developer</h2>
+        <p class="text-xl md:text-2xl text-gray-400 mb-8 animate-fade-up" style="animation-delay: 0.4s; opacity: 0">I build efficient and scalable backend systems</p>
+        <a href="#about" class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105 animate-fade-up" style="animation-delay: 0.6s; opacity: 0">
+          Explore More
+        </a>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="min-h-screen py-20 bg-slate-800">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 hidden-element">About Me</h2>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="hidden-element">
+            <div class="w-64 h-64 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-6xl font-bold shadow-2xl">
+              <img src="asset/zahran.jpg" alt="" class="rounded-full w-full h-full object-cover" />
+            </div>
+          </div>
+
+          <div class="hidden-element">
+            <h3 class="text-3xl font-semibold mb-6 text-blue-400">Passionate Backend Developer</h3>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              My area of expertise is creating reliable backend systems with contemporary technologies like Go, Python, and laravel. Building RESTful APIs, microservices architecture, and database optimization are among my areas of
+              expertise.
+            </p>
+            <p class="text-gray-300 text-lg leading-relaxed mb-4">
+              With a solid background in computer science and years of practical experience, I'm dedicated to creating clear, maintainable code that addresses practical issues. I enjoy taking on challenging technical problems and do best in
+              team-oriented settings.
+            </p>
+            <p class="text-gray-300 text-lg leading-relaxed">
+              My objective is to keep developing as a developer and to contribute to cutting-edge initiatives that have a significant influence. Learning new technologies and backend development best practices is something I'm constantly
+              excited to do.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="min-h-screen py-20 bg-slate-900">
+      <div class="container mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 hidden-element">My Projects</h2>
+
+        <!-- Category Filter -->
+        <div class="flex justify-center mb-12 hidden-element">
+          <div class="inline-flex bg-slate-800 rounded-lg p-1">
+            <button class="category-btn px-6 py-2 rounded-lg transition-all duration-300 bg-blue-500 text-white" data-category="all">All</button>
+            <button class="category-btn px-6 py-2 rounded-lg transition-all duration-300 text-gray-300 hover:text-white" data-category="web">Web Dev</button>
+            <button class="category-btn px-6 py-2 rounded-lg transition-all duration-300 text-gray-300 hover:text-white" data-category="admin">Administration</button>
+          </div>
+        </div>
+
+        <!-- Projects Grid -->
+        <div id="projectsGrid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Project 1 -->
+          <div class="project-card hidden-element bg-slate-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-category="web">
+            <div class="h-48 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-4xl font-bold">
+              <img src="asset/kalkulatorFidyah.png" alt="kalkulatorFidyah" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold mb-3">Fidyah Calculator</h3>
+              <p class="text-gray-400 mb-4">Simple web-based calculator to help users compute fidyah payments accurately and quickly, built with JavaScript and TailwindCSS.</p>
+              <span class="inline-block bg-blue-500 text-white text-sm px-3 py-1 rounded-full">Web Dev</span>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card hidden-element bg-slate-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-category="web">
+            <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center text-4xl font-bold">
+              <img src="asset/PortalBerita.png" alt="PortalBerita" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold mb-3">News Portal</h3>
+              <p class="text-gray-400 mb-4">Backend system built with Laravel to manage articles, categories, and user access with structured database relations and secure authentication.</p>
+              <span class="inline-block bg-blue-500 text-white text-sm px-3 py-1 rounded-full">Web Dev</span>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-card hidden-element bg-slate-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-category="web">
+            <div class="h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center text-4xl font-bold">
+              <img src="asset/auth.png" alt="kalkulatorFidyah" class="w-full h-full object-cover" />
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold mb-3">Authentication API (Go)</h3>
+              <p class="text-gray-400 mb-4">Secure authentication API built with Go, featuring JWT-based login, token validation, and modular architecture for scalable backend systems.</p>
+              <span class="inline-block bg-blue-500 text-white text-sm px-3 py-1 rounded-full">Web Dev</span>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-card hidden-element bg-slate-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-category="web">
+            <div class="h-48 bg-gradient-to-br from-pink-500 to-rose-600 flex items-center justify-center text-4xl font-bold">
+              <img src="asset/POS.png" alt="Point of sale" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold mb-3">Point of Sale System</h3>
+              <p class="text-gray-400 mb-4">Backend solution developed with Laravel for managing sales transactions, product inventory, and customer records with real-time data processing and secure database integration.</p>
+              <span class="inline-block bg-blue-500 text-white text-sm px-3 py-1 rounded-full">Web Dev</span>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="project-card hidden-element bg-slate-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-category="admin">
+            <div class="h-48 bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center text-4xl font-bold">
+              <img src="asset/postgresql.jpeg" alt="kalkulatorFidyah" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold mb-3">Management DB Tools</h3>
+              <p class="text-gray-400 mb-4">Backend management system leveraging MySQL, Redis, and PostgreSQL for efficient data handling, caching, and synchronization across multiple database environments.</p>
+              <span class="inline-block bg-purple-500 text-white text-sm px-3 py-1 rounded-full">Administration</span>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="project-card hidden-element bg-slate-800 rounded-lg overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2" data-category="admin">
+            <div class="h-48 bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center text-4xl font-bold">
+              <img src="asset/log.jpeg" alt="kalkulatorFidyah" class="w-full h-full object-cover" />
+            </div>
+            <div class="p-6">
+              <h3 class="text-2xl font-semibold mb-3">Log Management System</h3>
+              <p class="text-gray-400 mb-4">Centralized backend system designed to aggregate and manage logs from multiple services, enabling efficient monitoring, troubleshooting, and performance tracking.</p>
+
+              <span class="inline-block bg-purple-500 text-white text-sm px-3 py-1 rounded-full">Administration</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="min-h-screen py-20 bg-slate-800 flex items-center relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 hidden-element">Get In Touch</h2>
+        <p class="text-center text-gray-400 text-lg mb-16 hidden-element max-w-2xl mx-auto">
+          I'm currently available for freelance work and full-time opportunities. If you have a project that you want to get started or think you need my help, then get in touch.
+        </p>
+
+        <div class="max-w-5xl mx-auto">
+          <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <!-- Email Card -->
+            <div class="hidden-element bg-slate-900/50 backdrop-blur-sm rounded-xl p-8 text-center hover:bg-slate-900/70 transition-all duration-300 transform hover:-translate-y-2 border border-slate-700">
+              <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-white">Email</h3>
+              <a href="mailto:zahranijtarr@gmail.com" class="text-gray-400 hover:text-blue-400 transition-colors duration-300 break-all">zahranijtarr@gmail.com</a>
+            </div>
+
+            <!-- Linktree Card -->
+            <div class="hidden-element bg-slate-900/50 backdrop-blur-sm rounded-xl p-8 text-center hover:bg-slate-900/70 transition-all duration-300 transform hover:-translate-y-2 border border-slate-700">
+              <div class="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-white">Linktree</h3>
+              <a href="https://linktr.ee/zah_ijtarrhm" target="_blank" class="text-gray-400 hover:text-green-400 transition-colors duration-300">linktr.ee/zah_ijtarrhm</a>
+            </div>
+
+            <!-- Location Card -->
+            <div class="hidden-element bg-slate-900/50 backdrop-blur-sm rounded-xl p-8 text-center hover:bg-slate-900/70 transition-all duration-300 transform hover:-translate-y-2 border border-slate-700">
+              <div class="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold mb-2 text-white">Location</h3>
+              <p class="text-gray-400">Bandung, West Java, ID</p>
+            </div>
+          </div>
+
+          <!-- CTA Section -->
+          <div class="text-center hidden-element">
+            <div class="bg-gradient-to-r from-blue-500/20 to-purple-500/20 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-slate-700">
+              <h3 class="text-3xl font-bold mb-4">Ready to Start a Project?</h3>
+              <p class="text-gray-400 text-lg mb-8 max-w-2xl mx-auto">Let's collaborate and build something amazing together. I'm just one message away!</p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="mailto:zahranijtarr@gmail.com"
+                  class="inline-flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/50"
+                >
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                  Send Email
+                </a>
+                <a
+                  href="https://linktr.ee/zah_ijtarrhm"
+                  target="_blank"
+                  class="inline-flex items-center justify-center bg-slate-700 hover:bg-slate-600 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105"
+                >
+                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
+                  </svg>
+                  View All Links
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Media Links -->
+          <div class="flex justify-center space-x-6 mt-12 hidden-element">
+            <a
+              href="https://github.com/zahran28"
+              target="_blank"
+              class="w-12 h-12 bg-slate-900/50 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-slate-700 transition-all duration-300 transform hover:scale-110 border border-slate-700"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/zahran-ijtar-rahman/"
+              target="_blank"
+              class="w-12 h-12 bg-slate-900/50 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-slate-700 transition-all duration-300 transform hover:scale-110 border border-slate-700"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://x.com/zah_ijtarrhm"
+              target="_blank"
+              class="w-12 h-12 bg-slate-900/50 backdrop-blur-sm rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-slate-700 transition-all duration-300 transform hover:scale-110 border border-slate-700"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-8 text-center text-gray-400">
+      <p>&copy; 2025 Ran. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // Navbar scroll effect
+      const navbar = document.getElementById("navbar");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("nav-scrolled");
+        } else {
+          navbar.classList.remove("nav-scrolled");
+        }
+
+        // Active section highlighting
+        const sections = document.querySelectorAll("section");
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (window.scrollY >= sectionTop - 200) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("text-blue-400");
+          link.classList.add("text-gray-300");
+          if (link.getAttribute("href").substring(1) === current) {
+            link.classList.remove("text-gray-300");
+            link.classList.add("text-blue-400");
+          }
+        });
+      });
+
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll("#mobileMenu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -100px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const element = entry.target;
+
+            if (element.closest("#about")) {
+              const children = element.closest("#about").querySelectorAll(".hidden-element");
+              children.forEach((child, index) => {
+                setTimeout(() => {
+                  child.classList.remove("hidden-element");
+                  if (index === 1) {
+                    child.classList.add("animate-fade-left");
+                  } else if (index === 2) {
+                    child.classList.add("animate-fade-right");
+                  } else {
+                    child.classList.add("animate-fade-up");
+                  }
+                }, index * 150);
+              });
+            } else if (element.classList.contains("project-card")) {
+              element.classList.remove("hidden-element");
+              element.classList.add("animate-zoom-in");
+            } else {
+              element.classList.remove("hidden-element");
+              element.classList.add("animate-fade-up");
+            }
+
+            observer.unobserve(element);
+          }
+        });
+      }, observerOptions);
+
+      // Observe all hidden elements
+      document.querySelectorAll(".hidden-element").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Project filtering
+      const categoryBtns = document.querySelectorAll(".category-btn");
+      const projectCards = document.querySelectorAll(".project-card");
+
+      categoryBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const category = btn.getAttribute("data-category");
+
+          // Update active button
+          categoryBtns.forEach((b) => {
+            b.classList.remove("bg-blue-500", "text-white");
+            b.classList.add("text-gray-300");
+          });
+          btn.classList.add("bg-blue-500", "text-white");
+          btn.classList.remove("text-gray-300");
+
+          // Filter projects
+          projectCards.forEach((card) => {
+            const cardCategory = card.getAttribute("data-category");
+            if (category === "all" || cardCategory === category) {
+              card.style.display = "block";
+              setTimeout(() => {
+                card.style.opacity = "1";
+                card.style.transform = "scale(1)";
+              }, 10);
+            } else {
+              card.style.opacity = "0";
+              card.style.transform = "scale(0.9)";
+              setTimeout(() => {
+                card.style.display = "none";
+              }, 300);
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
